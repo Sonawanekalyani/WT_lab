@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Clothing Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.freecreatives.com/wp-content/uploads/2016/04/World-Wide-Web-Background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            background: transparent; 
+            color: white;
+            text-align: center;
+            padding: 1em;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .nav-toggle {
+            color: #333;
+            border: none;
+            padding: 10px 15px;
+            font-size: 26px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-right: 1500px;
+        }
+        nav {
+            display: none;
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .product-gallery {
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 1em; 
+            padding: 2em;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 2em;
+            text-align: center;
+            width: 200px; 
+            background: white;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 220px;
+        }
+        .product:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            max-width: 250px; 
+            height: 140px; 
+            width: 170px; 
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome To Our Kids Fashion Wear</h1>
+        <button class="nav-toggle" onclick="toggleNav()">☰</button>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="#" onclick="showAlert('Home')">Home</a></li>
+                <li><a href="#" onclick="showAlert('Shop')">Shop</a></li>
+                <li><a href="#" onclick="showAlert('About')">About</a></li>
+                <li><a href="#" onclick="showAlert('Contact')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="product-gallery">
+            <div class="product" onclick="showProductDetails('Kids Dress', 'Rs.100')">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.Q-SYoBlrLFaoZ8U0M1DFCAHaHa&pid=Api&P=0&h=180">
+                <h2>Kids Dress</h2>
+                <p>Rs.100</p>
+            </div>
+            <div class="product" onclick="showProductDetails('Kids Dress', 'Rs.199')">
+                <img src="https://www.pngmart.com/files/7/Baby-Clothes-PNG-Free-Download.png">
+                <h2>Kids Dress</h2>
+                <p>Rs.199</p>
+            </div>
+            <div class="product" onclick="showProductDetails('Kids Dress', 'Rs.299')">
+                <img src="https://png.pngtree.com/png-vector/20231113/ourmid/pngtree-summer-baby-girl-dresses-gingham-clip-art-png-image_10576528.png">
+                <h2>Kids Dress</h2>
+                <p>Rs.299</p>
+            </div>
+            <div class="product">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.8ZDL0McqCZ_TO18yyiK0XAHaHa&pid=Api&P=0&h=180">
+                <h2>kids dress</h2>
+                <p>Rs.299</p>
+            </div>
+            <!-- <div class="product">
+                <img src="https://png.pngtree.com/png-vector/20231113/ourmid/pngtree-summer-baby-girl-dresses-lace-png-image_10576532.png">
+                <h2>kids dress</h2>
+                <p>Rs.199</p>
+            </div>
+             <div class="product">
+                <img src="https://tse3.mm.bing.net/th?id=OIP.8ZDL0McqCZ_TO18yyiK0XAHaHa&pid=Api&P=0&h=180">
+                <h2>kids dress</h2>
+                <p>Rs.299</p> -->
+            </div>
+            <div class="product">
+                <img src="https://png.pngtree.com/png-vector/20231113/ourmid/pngtree-summer-baby-girl-dresses-lace-png-image_10576532.png">
+                <h2>kids dress</h2>
+                <p>Rs.199</p>
+            </div>
+            <div class="product">
+                <img src="https://clipart-library.com/2023/one-piece-dress-clipart-xl.png">
+                <h2>kids dress</h2>
+                <p>Rs.199</p>
+            </div>
+            <div class="product">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.99RzcmBk4nfjToSj2FuOxwHaJn&pid=Api&P=0&h=180">
+                <h2>kids dress</h2>
+                <p>Rs.299</p>
+            </div>
+            <div class="product">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.wayVrwiGk7E1bf1qdURWnAHaGn&pid=Api&P=0&h=180">
+                <h2>kids dress</h2>
+                <p>Rs.299</p>
+            </div>
+            <div class="product">
+                <img src="https://tse1.mm.bing.net/th?id=OIP.e5fQWcH2Bj1a5BMMYHx-UgHaGr&pid=Api&P=0&h=180">
+                <h2>kids dress</h2>
+                <p>Rs.399</p>
+            </div>
+            <div class="product">
+                <img src="https://tse2.mm.bing.net/th?id=OIP.Az1LOECVmCeGXcmoSssHyQHaGd&pid=Api&P=0&h=180">
+                <h2>kids dress</h2>
+                <p>Rs.299</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Interactive Clothing Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById("nav-menu");
+            if (nav.style.display === "none" || nav.style.display === "") {
+                nav.style.display = "block";
+            } else {
+                nav.style.display = "none";
+            }
+        }
+        function showAlert(section) {
+            alert("You clicked on " + section);
+        }
+        function showProductDetails(name, price) {
+            alert("Product: " + name + "\nPrice: " + price);
+        }
+    </script>
+</body>
+</html>
